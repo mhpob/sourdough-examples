@@ -1,8 +1,8 @@
 library(mapgl)
 fls <- list.files("parks", pattern = "\\.R$", full.names = T)
-fls <- fls[!grepl("style\\.R")]
+fls <- fls[!grepl("style\\.R", fls)]
 for (i in seq_along(fls)) {
-  source(fls)
+  source(fls[i])
 }
 
 maplibre(
